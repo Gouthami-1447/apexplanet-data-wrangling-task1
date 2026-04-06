@@ -1,0 +1,89 @@
+  invoice_no customer_id  gender  ...  payment_method invoice_date   shopping_mall
+0    I138884     C241288  Female  ...     Credit Card     5/8/2022          Kanyon
+1    I317333     C111565    Male  ...      Debit Card   12/12/2021  Forum Istanbul
+2    I127801     C266599    Male  ...            Cash    9/11/2021       Metrocity
+3    I173702     C988172  Female  ...     Credit Card   16/05/2021    Metropol AVM
+4    I337046     C189076  Female  ...            Cash   24/10/2021          Kanyon
+
+[5 rows x 10 columns]
+(99457, 10)
+Index(['invoice_no', 'customer_id', 'gender', 'age', 'category', 'quantity',
+       'price', 'payment_method', 'invoice_date', 'shopping_mall'],
+      dtype='object')
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 99457 entries, 0 to 99456
+Data columns (total 10 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   invoice_no      99457 non-null  object 
+ 1   customer_id     99457 non-null  object 
+ 2   gender          99457 non-null  object 
+ 3   age             99457 non-null  int64  
+ 4   category        99457 non-null  object 
+ 5   quantity        99457 non-null  int64  
+ 6   price           99457 non-null  float64
+ 7   payment_method  99457 non-null  object 
+ 8   invoice_date    99457 non-null  object 
+ 9   shopping_mall   99457 non-null  object 
+dtypes: float64(1), int64(2), object(7)
+memory usage: 7.6+ MB
+None
+
+After converting date:
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 99457 entries, 0 to 99456
+Data columns (total 10 columns):
+ #   Column          Non-Null Count  Dtype         
+---  ------          --------------  -----         
+ 0   invoice_no      99457 non-null  object        
+ 1   customer_id     99457 non-null  object        
+ 2   gender          99457 non-null  object        
+ 3   age             99457 non-null  int64         
+ 4   category        99457 non-null  object        
+ 5   quantity        99457 non-null  int64         
+ 6   price           99457 non-null  float64       
+ 7   payment_method  99457 non-null  object        
+ 8   invoice_date    99457 non-null  datetime64[ns]
+ 9   shopping_mall   99457 non-null  object        
+dtypes: datetime64[ns](1), float64(1), int64(2), object(6)
+memory usage: 7.6+ MB
+None
+  invoice_no customer_id  gender  ...  invoice_date   shopping_mall  total_amount
+0    I138884     C241288  Female  ...    2022-08-05          Kanyon       7502.00
+1    I317333     C111565    Male  ...    2021-12-12  Forum Istanbul       5401.53
+2    I127801     C266599    Male  ...    2021-11-09       Metrocity        300.08
+3    I173702     C988172  Female  ...    2021-05-16    Metropol AVM      15004.25
+4    I337046     C189076  Female  ...    2021-10-24          Kanyon        242.40
+
+[5 rows x 11 columns]
+   age age_group
+0   28     Adult
+1   21     Young
+2   20     Young
+3   66    Senior
+4   53    Senior
+  invoice_date  month
+0   2022-08-05      8
+1   2021-12-12     12
+2   2021-11-09     11
+3   2021-05-16      5
+4   2021-10-24     10
+
+Duplicate rows: 0
+
+Missing values:
+ invoice_no        0
+customer_id       0
+gender            0
+age               0
+category          0
+quantity          0
+price             0
+payment_method    0
+invoice_date      0
+shopping_mall     0
+total_amount      0
+age_group         0
+month             0
+dtype: int64
